@@ -11,6 +11,8 @@
   --color-neon-green: #00ff9d;
   --color-pixel-blue: #00bfff;
   --color-pixel-purple: #c084fc;
+
+  --breakpoint-xs: 30rem;
 }
 
 @theme inline {

@@ -13,7 +13,7 @@ const buttonVariants = cva(
       variant: {
         none: "",
         pixel:
-          "relative bg-neon-yellow text-gray-900 font-bold text-lg saturate-150 backdrop-blur-md shadow-[1px_1px_4px_#000,_0_0_6px_#f9ff00] hover:scale-x-105 hover:scale-y-[99%] px-8 py-2.5",
+          "relative bg-neon-yellow text-gray-900 font-bold text-lg shadow-[1px_1px_4px_#000,_0_0_6px_#f9ff00] hover:scale-x-105 hover:scale-y-[99%] px-8 py-2.5",
       },
     },
     defaultVariants: { variant: "none" },

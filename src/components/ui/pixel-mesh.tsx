@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default function PixelMesh({
-  pixelSize = 0.875,
+  pixelSize = 0.75,
   columns = 6,
   rows = 3,
   className = "",
