@@ -1,0 +1,29 @@
+{
+  // Toggle excluded files
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/dist": true,
+    "**/.vscode": true,
+    "**/.eslintrc.json": true,
+    "**/.editorconfig": true,
+    "**/.gitignore": true,
+    "**/.prettierignore": true,
+    "**/.prettierrc.json": true,
+    "**/cspell.json": true,
+    "**/package-lock.json": true,
+    "**/next-env.d.ts": true,
+    "**/postcss.config.js": true,
+    "**/README.md": true,
+    "**/next.config.js": true,
+    "**/tsconfig.json": true,
+    "**/tsconfig.tsbuildinfo": true,
+    "**/.env.example": true
+  }
+}

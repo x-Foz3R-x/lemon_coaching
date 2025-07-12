@@ -1,7 +1,11 @@
 import "~/styles/globals.css";
 
 import { type Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Silkscreen } from "next/font/google";
+
+import { cn } from "~/lib/utils";
+
+import SiteHeader from "~/components/layout/site-header";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -14,12 +18,21 @@ const geist = Geist({
   variable: "--font-geist-sans",
 });
 
+const silkscreen = Silkscreen({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-pixel",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={cn(geist.variable, silkscreen.variable)}>
+      <body className="bg-gradient-to-b from-gray-900 to-gray-950 text-pretty antialiased">
+        <SiteHeader />
+        {children}
+      </body>
     </html>
   );
 }

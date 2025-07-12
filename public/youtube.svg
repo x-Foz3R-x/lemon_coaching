@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="Youtube" x="0" y="0" width="32" height="32" style="fill:none;"/>
+    <g id="Youtube1" serif:id="Youtube">
+        <g transform="matrix(1.1875,0,0,1.1875,-26.75,-3.25)">
+            <path d="M23.158,21.474L23.158,10.526L24.158,10.526L24.158,9.026L25.658,9.026L25.658,7.526L46.342,7.526L46.342,9.026L47.842,9.026L47.842,10.526L48.842,10.526L48.842,21.474L47.842,21.474L47.842,22.974L46.342,22.974L46.342,24.474L25.658,24.474L25.658,22.974L24.158,22.974L24.158,21.474L23.158,21.474ZM25.053,20.421L25.895,20.421L25.895,21.684L27.158,21.684L27.158,22.947L44.842,22.947L44.842,21.684L46.105,21.684L46.105,20.421L46.947,20.421L46.947,12L46.105,12L46.105,10.737L44.842,10.737L44.842,9.474L27.158,9.474L27.158,10.737L25.895,10.737L25.895,12L25.053,12L25.053,20.421Z"/>
+        </g>
+        <g transform="matrix(1.2,0,0,1.2,-30.95,-2)">
+            <path d="M36.5,10L39,10L39,11L40,11L40,12L41,12L41,13L42,13L42,14L43,14L43,16L42,16L42,17L41,17L41,18L40,18L40,19L39,19L39,20L36.5,20L36.5,10ZM38,12L38,18L39,18L39,17L40,17L40,16L41,16L41,14L40,14L40,13L39,13L39,12L38,12Z"/>
+        </g>
+    </g>
+</svg>

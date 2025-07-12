@@ -44,3 +44,9 @@ yarn-error.log*
 
 # idea files
 .idea
+
+# pnpm
+pnpm-debug.log
+pnpm-store
+pnpm-lock.yaml
+pnpm-workspace.yaml
