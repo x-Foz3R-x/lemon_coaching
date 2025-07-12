@@ -53,7 +53,7 @@ function ReviewCard({
           {username}
         </div>
 
-        <div className="flex items-center font-sans text-xs leading-3.5 text-slate-800 uppercase opacity-60">
+        <div className="flex items-center font-sans text-xs leading-3.5 text-slate-950 uppercase brightness-75 contrast-75">
           <div
             className={cn(
               "font-pixel flex flex-col items-center gap-1 rounded border px-1",
@@ -62,7 +62,7 @@ function ReviewCard({
           >
             {initialRank}
           </div>
-          <div className="font-pixel px-1 leading-0 font-bold text-slate-500">
+          <div className="font-pixel px-1 leading-0 font-bold text-slate-400">
             to
           </div>
           <div

@@ -1,7 +1,7 @@
 import { cn } from "~/lib/utils"; // Zakładam, że cn jest zaimportowane z lib/utils
 import PixelButton from "./ui/pixel-button";
 
-interface OfferCardProps {
+interface Props {
   title: string;
   description: string;
   preparation: string[];
@@ -15,7 +15,7 @@ export default function CoachingPlanCard({
   preparation,
   price,
   icon,
-}: OfferCardProps) {
+}: Props) {
   return (
     <div
       className={cn(

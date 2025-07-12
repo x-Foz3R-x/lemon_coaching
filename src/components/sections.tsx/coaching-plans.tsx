@@ -1,11 +1,20 @@
+import { Sword, Shield } from "lucide-react";
+
+import { cn } from "~/lib/utils";
 import CoachingPlanCard from "../coaching-plan-card";
 import SectionHeader from "../section-header";
 import PixelMesh from "../ui/pixel-mesh";
-import { Sword, Shield } from "lucide-react";
+
+const preparationSteps = [
+  "Prepare a recent replay of a game in your chosen role",
+  "List your main champions and any specific struggles",
+  "Set up Discord for voice communication",
+  "Ensure a stable internet connection",
+];
 
 export default function CoachingPlansSection() {
   return (
-    <section id="offers" className="relative w-full py-14">
+    <section id="coaching-plans" className="relative w-full py-14">
       {/* Pixel decoration */}
       <div className="absolute top-0 left-1/6">
         <PixelMesh columns={2} rows={2} />
@@ -38,6 +47,30 @@ export default function CoachingPlansSection() {
           price="25$ / 1h"
           icon={<Sword className="text-pixel-purple" />}
         />
+      </div>
+
+      <div className={cn("mx-auto p-6 text-center shadow-lg")}>
+        <h5 className="font-pixel text-neon-green text-lg">
+          How to Prepare for Coaching
+        </h5>
+        <ul className="mt-4 space-y-2 text-sm text-white/70">
+          <li className="flex items-center justify-center gap-2">
+            <span className="text-neon-green">•</span> Prepare a recent replay
+            of a game in your chosen role
+          </li>
+          <li className="flex items-center justify-center gap-2">
+            <span className="text-neon-green">•</span>
+            List your main champions and any specific struggles
+          </li>
+          <li className="flex items-center justify-center gap-2">
+            <span className="text-neon-green">•</span>
+            Set up Discord for voice communication
+          </li>
+          <li className="flex items-center justify-center gap-2">
+            <span className="text-neon-green">•</span>
+            Ensure a stable internet connection
+          </li>
+        </ul>
       </div>
     </section>
   );

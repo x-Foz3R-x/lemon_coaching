@@ -18,7 +18,7 @@ export default function AboutSection() {
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-9">
         {/* Avatar */}
-        <div className="border-pixel-purple/25 mx-auto h-48 w-48 flex-shrink-0 overflow-hidden rounded-xl border bg-slate-500 p-2 shadow-lg">
+        <div className="border-pixel-purple/25 mx-auto size-36 flex-shrink-0 overflow-hidden rounded-xl border bg-slate-500 p-2 shadow-lg sm:size-48">
           <Avatar className="size-full scale-x-[-1]" />
         </div>
 
