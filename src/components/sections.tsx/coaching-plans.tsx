@@ -15,7 +15,7 @@ export default function CoachingPlansSection() {
         <PixelMesh columns={4} rows={2} />
       </div>
 
-      <SectionHeader title="Coaching Offers" className="text-neon-green" />
+      <SectionHeader title="Coaching Plans" className="text-neon-green" />
       <div className="mb-8 flex flex-wrap items-center justify-center gap-8 text-white sm:grid-cols-2">
         <CoachingPlanCard
           title="Top Lane"
