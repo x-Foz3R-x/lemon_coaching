@@ -27,7 +27,7 @@ export default function PixelButton({
       href={href ?? "/"}
       data-slot="button"
       className={cn(
-        "focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-neon-yellow group: relative inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 font-bold whitespace-nowrap text-gray-900 uppercase shadow-[0px_0px_2px_#000,_0_0_4px_#f9ff00] saturate-150 transition outline-none hover:scale-x-[107%] hover:scale-y-[98%] hover:shadow-[0px_0px_2px_#000,_0_0_6px_#f9ff00] focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        "focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-neon-yellow group: relative inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 scroll-smooth font-bold whitespace-nowrap text-gray-900 uppercase shadow-[0px_0px_2px_#000,_0_0_4px_#f9ff00] saturate-150 transition outline-none hover:scale-x-[107%] hover:scale-y-[98%] hover:shadow-[0px_0px_2px_#000,_0_0_6px_#f9ff00] focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
         buttonVariants({ size, className }),
       )}
       {...props}
