@@ -5,13 +5,6 @@ import CoachingPlanCard from "../coaching-plan-card";
 import SectionHeader from "../section-header";
 import PixelMesh from "../ui/pixel-mesh";
 
-const preparationSteps = [
-  "Prepare a recent replay of a game in your chosen role",
-  "List your main champions and any specific struggles",
-  "Set up Discord for voice communication",
-  "Ensure a stable internet connection",
-];
-
 export default function CoachingPlansSection() {
   return (
     <section id="coaching-plans" className="relative w-full py-14">
@@ -24,28 +17,18 @@ export default function CoachingPlansSection() {
       </div>
 
       <SectionHeader title="Coaching Offers" className="text-neon-green" />
-      <div className="grid grid-cols-1 gap-4 text-white sm:grid-cols-2">
+      <div className="flex flex-wrap items-center justify-center gap-8 text-white sm:grid-cols-2">
         <CoachingPlanCard
           title="Top Lane"
           description="Learn wave control, trading, macro, matchups & impact from the top"
-          preparation={[
-            "Prepare a recent replay of a Top Lane game",
-            "Note your main champions and matchups you struggle with",
-            "Ensure a stable internet connection for voice chat",
-          ]}
-          price="25$ / 1h"
-          icon={<Shield className="text-pixel-blue" />}
+          price="25$"
+          icon={<Shield className="text-pixel-blue size-full" />}
         />
         <CoachingPlanCard
           title="Mid Lane"
           description="Dominate mid with roam timing, tempo, vision, map impact & duels"
-          preparation={[
-            "Have a replay of a recent Mid Lane game ready",
-            "List your preferred champions and playstyle",
-            "Set up Discord for communication",
-          ]}
-          price="25$ / 1h"
-          icon={<Sword className="text-pixel-purple" />}
+          price="25$"
+          icon={<Sword className="size-full text-red-400" />}
         />
       </div>
 
