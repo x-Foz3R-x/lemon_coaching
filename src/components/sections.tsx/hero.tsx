@@ -27,7 +27,7 @@ export default function HeroSection() {
         70% winrate. Learn how to think and play like a winner.
       </p>
 
-      <PixelButton href="#coaching-plans" className="mt-8">
+      <PixelButton href="#coaching-plans" className="mt-8 scroll-smooth">
         Book a Session
       </PixelButton>
     </section>

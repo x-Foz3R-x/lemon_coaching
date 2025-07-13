@@ -5,10 +5,10 @@ export default function AboutSection() {
   return (
     <section className="relative w-full py-14">
       {/* Pixel decoration */}
-      <div className="absolute top-0 right-1/6">
+      <div className="absolute top-1/6 right-1/3">
         <PixelMesh columns={3} rows={3} />
       </div>
-      <div className="absolute bottom-0 left-1/5">
+      <div className="absolute bottom-1/12 left-1/5">
         <PixelMesh columns={3} rows={1} />
       </div>
 

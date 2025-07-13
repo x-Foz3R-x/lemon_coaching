@@ -16,7 +16,7 @@ export default function HomePage() {
         <ReviewsSection />
 
         {/* --- Footer / Contact CTA --- */}
-        <footer className="w-full max-w-2xl text-center">
+        <footer className="w-full py-14 text-center">
           <h4 className="font-pixel mb-4 text-2xl text-lime-400">
             Join the Community
           </h4>

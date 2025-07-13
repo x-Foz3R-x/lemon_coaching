@@ -6,10 +6,10 @@ export default function ReviewsSection() {
   return (
     <section className="relative w-full py-14">
       {/* Pixel decoration */}
-      <div className="absolute top-0 left-1/12">
+      <div className="absolute top-0 right-1/12">
         <PixelMesh columns={2} rows={2} />
       </div>
-      <div className="absolute right-1/12 bottom-[-2rem]">
+      <div className="absolute bottom-1/12 left-1/12">
         <PixelMesh columns={3} rows={3} />
       </div>
 

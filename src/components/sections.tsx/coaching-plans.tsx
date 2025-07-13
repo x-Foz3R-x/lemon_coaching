@@ -1,6 +1,5 @@
 import { Sword, Shield } from "lucide-react";
 
-import { cn } from "~/lib/utils";
 import CoachingPlanCard from "../coaching-plan-card";
 import SectionHeader from "../section-header";
 import PixelMesh from "../ui/pixel-mesh";
@@ -9,15 +8,15 @@ export default function CoachingPlansSection() {
   return (
     <section id="coaching-plans" className="relative w-full py-14">
       {/* Pixel decoration */}
-      <div className="absolute top-0 left-1/6">
+      <div className="absolute top-1/12 right-1/12">
         <PixelMesh columns={2} rows={2} />
       </div>
-      <div className="absolute right-1/4 bottom-0">
-        <PixelMesh columns={3} rows={1} />
+      <div className="absolute bottom-1/4 left-1/6">
+        <PixelMesh columns={4} rows={2} />
       </div>
 
       <SectionHeader title="Coaching Offers" className="text-neon-green" />
-      <div className="flex flex-wrap items-center justify-center gap-8 text-white sm:grid-cols-2">
+      <div className="mb-8 flex flex-wrap items-center justify-center gap-8 text-white sm:grid-cols-2">
         <CoachingPlanCard
           title="Top Lane"
           description="Learn wave control, trading, macro, matchups & impact from the top"
@@ -32,25 +31,25 @@ export default function CoachingPlansSection() {
         />
       </div>
 
-      <div className={cn("mx-auto p-6 text-center shadow-lg")}>
+      <div className="mx-auto text-center shadow-lg">
         <h5 className="font-pixel text-neon-green text-lg">
           How to Prepare for Coaching
         </h5>
         <ul className="mt-4 space-y-2 text-sm text-white/70">
           <li className="flex items-center justify-center gap-2">
-            <span className="text-neon-green">•</span> Prepare a recent replay
-            of a game in your chosen role
+            <span className="text-neon-green select-none">•</span> Prepare a
+            recent replay of a game in your chosen role
           </li>
           <li className="flex items-center justify-center gap-2">
-            <span className="text-neon-green">•</span>
+            <span className="text-neon-green select-none">•</span>
             List your main champions and any specific struggles
           </li>
           <li className="flex items-center justify-center gap-2">
-            <span className="text-neon-green">•</span>
+            <span className="text-neon-green select-none">•</span>
             Set up Discord for voice communication
           </li>
           <li className="flex items-center justify-center gap-2">
-            <span className="text-neon-green">•</span>
+            <span className="text-neon-green select-none">•</span>
             Ensure a stable internet connection
           </li>
         </ul>
