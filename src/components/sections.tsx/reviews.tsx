@@ -7,9 +7,6 @@ export default function ReviewsSection() {
     <section className="relative w-full py-14">
       {/* Pixel decoration */}
       <div className="absolute top-0 right-1/12">
-        <PixelMesh columns={2} rows={2} />
-      </div>
-      <div className="absolute bottom-1/12 left-1/12">
         <PixelMesh columns={3} rows={3} />
       </div>
 

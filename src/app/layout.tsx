@@ -6,6 +6,7 @@ import { Geist, Silkscreen } from "next/font/google";
 import { cn } from "~/lib/utils";
 
 import SiteHeader from "~/components/layout/site-header";
+import SiteFooter from "~/components/layout/site-footer";
 
 export const metadata: Metadata = {
   title: "Lemon Coaching",
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className="bg-gradient-to-b from-gray-900 to-gray-950 text-pretty antialiased">
         <SiteHeader />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

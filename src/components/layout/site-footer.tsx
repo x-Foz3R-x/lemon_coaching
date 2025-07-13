@@ -1,0 +1,49 @@
+import Link from "next/link";
+import SectionHeader from "../section-header";
+import PixelButton from "../ui/pixel-button";
+import PixelBackground from "../ui/pixel-background";
+
+export default function SiteFooter() {
+  return (
+    <footer className="relative w-full">
+      <PixelBackground className="w-full py-14 text-center">
+        <div className="flex flex-col items-center gap-4 py-6">
+          <SectionHeader
+            title="Join the Community"
+            className="text-neon-yellow m-0 text-2xl leading-4"
+          />
+          <p className="text-gray-400">
+            Get updates, tips and join the Discord server to ask <br />
+            questions & share your progress.
+          </p>
+          <PixelButton>Join Discord</PixelButton>
+        </div>
+
+        <p className="p-2 text-sm text-gray-400 italic">
+          „It&rsquo;s not about playing more, it&rsquo;s about playing better.”
+        </p>
+      </PixelBackground>
+
+      <div className="w-full bg-gray-700/35 p-2.5">
+        <div className="container mx-auto flex justify-between gap-4">
+          <p className="font-mono text-xs text-gray-500">
+            &copy; {new Date().getFullYear()} LemoN Coaching. All rights
+            reserved.
+          </p>
+
+          <p className="font-mono text-[10px] text-gray-500">
+            Crafted by{" "}
+            <Link
+              href="https://github.com/x-Foz3R-x"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-pixel-purple/80 text-pixel-purple/50 underline"
+            >
+              Foz3R
+            </Link>
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
