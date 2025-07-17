@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import { cn } from "~/lib/utils";
 
-export const BackgroundGradient = ({
+export default function BackgroundGradient({
   children,
   className,
   containerClassName,
@@ -13,7 +13,7 @@ export const BackgroundGradient = ({
   className?: string;
   containerClassName?: string;
   animate?: boolean;
-}) => {
+}) {
   const variants = {
     initial: {
       backgroundPosition: "0 50%",
@@ -70,4 +70,4 @@ export const BackgroundGradient = ({
       <div className={cn("relative z-10", className)}>{children}</div>
     </div>
   );
-};
+}

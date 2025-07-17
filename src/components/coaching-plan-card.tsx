@@ -1,5 +1,5 @@
-import PixelButton from "./ui/pixel-button";
-import { BackgroundGradient } from "./ui/background-gradient";
+import BackgroundGradient from "./ui/background-gradient";
+import SessionBookingDialog from "./session-booking-dialog";
 
 interface Props {
   title: string;
@@ -35,9 +35,7 @@ export default function CoachingPlanCard({
 
       <p className="text-sm leading-relaxed text-white/70">{description}</p>
 
-      <PixelButton size="sm" className="mx-4">
-        Book Now
-      </PixelButton>
+      <SessionBookingDialog />
     </BackgroundGradient>
   );
 }

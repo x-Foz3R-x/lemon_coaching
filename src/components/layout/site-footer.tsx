@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { env } from "~/env";
+
 import SectionHeader from "../section-header";
 import PixelButton from "../ui/pixel-button";
 import PixelBackground from "../ui/pixel-background";
@@ -16,7 +18,9 @@ export default function SiteFooter() {
             Get updates, tips and join the Discord server to ask <br />
             questions & share your progress.
           </p>
-          <PixelButton>Join Discord</PixelButton>
+          <PixelButton href={env.NEXT_PUBLIC_DISCORD_URL}>
+            Join Discord
+          </PixelButton>
         </div>
 
         <p className="p-2 text-sm text-gray-400 italic">
@@ -34,7 +38,7 @@ export default function SiteFooter() {
           <p className="font-mono text-[10px] text-gray-500">
             Crafted by{" "}
             <Link
-              href="https://github.com/x-Foz3R-x"
+              href={env.NEXT_PUBLIC_AUTHOR_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-pixel-purple/80 text-pixel-purple/50 underline"

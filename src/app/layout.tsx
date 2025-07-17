@@ -29,7 +29,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={cn(geist.variable, silkscreen.variable)}>
+    <html
+      lang="en"
+      className={cn(geist.variable, silkscreen.variable, "scroll-smooth")}
+    >
       <body className="bg-gradient-to-b from-gray-900 to-gray-950 text-pretty antialiased">
         <SiteHeader />
         {children}

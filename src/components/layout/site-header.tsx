@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { env } from "~/env";
 
 import PixelMesh from "../ui/pixel-mesh";
 import { Discord, Instagram, Logo, Youtube } from "../icons";
@@ -17,13 +18,22 @@ export default async function SiteHeader() {
           </Link>
 
           <nav className="relative flex h-9 items-center text-sm text-white sm:hidden">
-            <Link href="/" className="h-full px-3 py-1.5">
+            <Link
+              href={env.NEXT_PUBLIC_INSTAGRAM_URL}
+              className="h-full px-3 py-1.5"
+            >
               <Instagram className="size-6 drop-shadow-[0_0_1px_#000,_0_0_2px_rgba(255,255,255,0.75)]" />
             </Link>
-            <Link href="/" className="h-full px-3 py-1.5">
+            <Link
+              href={env.NEXT_PUBLIC_YOUTUBE_URL}
+              className="h-full px-3 py-1.5"
+            >
               <Youtube className="size-6 drop-shadow-[0_0_1px_#000,_0_0_2px_rgba(255,255,255,0.75)]" />
             </Link>
-            <Link href="/" className="h-full px-3 py-1.5">
+            <Link
+              href={env.NEXT_PUBLIC_DISCORD_URL}
+              className="h-full px-3 py-1.5"
+            >
               <Discord className="size-6 drop-shadow-[0_0_1px_#000,_0_0_2px_rgba(255,255,255,0.75)]" />
             </Link>
 
