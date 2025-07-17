@@ -1,6 +1,12 @@
 "use client";
 
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import PixelMesh from "./pixel-mesh";
 import { cn } from "~/lib/utils";
 
@@ -10,62 +16,125 @@ interface Props {
   children?: React.ReactNode;
 }
 
+interface PixelData {
+  columns: number;
+  pixelSize: number;
+}
+
+const DEBOUNCE_MS = 100;
+
 export default function PixelBackground({
-  rows = 5,
+  rows = 6,
   className,
   children,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [pixelData, setPixelData] = useState<{
-    columns: number;
-    pixelSizeRem: number;
-  } | null>(null);
+  const resizeTimeoutRef = useRef<NodeJS.Timeout>(null);
+  const [pixelData, setPixelData] = useState<PixelData | null>(null);
 
-  useLayoutEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-
-    const updateSize = () => {
-      const rect = el.getBoundingClientRect();
+  const calculatePixelData = useCallback(
+    (element: HTMLElement): PixelData | null => {
+      const rect = element.getBoundingClientRect();
       const width = rect.width;
       const height = rect.height;
 
-      // Check for invalid dimensions
-      if (width <= 0 || height <= 0 || rows <= 0) return;
+      if (width <= 0 || height <= 0 || rows <= 0) return null;
 
-      // Calculate columns based on aspect ratio and rows
-      const columns = Math.round((width / height) * rows);
-      if (columns <= 0) return;
+      // Start with a reasonable pixel size and adjust
+      const aspectRatio = width / height;
+      const columns = Math.round(aspectRatio * rows);
 
-      // Calculate pixel size so width is exactly covered
+      // Calculate pixel size to fill available width exactly
       const pixelSizePx = width / columns;
-      const pixelSizeRem = pixelSizePx / 16; // Assuming 1rem = 16px
+      const pixelSizeRem = pixelSizePx / 16;
 
-      setPixelData({ columns, pixelSizeRem });
+      return {
+        columns,
+        pixelSize: pixelSizeRem,
+      };
+    },
+    [rows],
+  );
+
+  const handleResize = useCallback(
+    (entries: ResizeObserverEntry[]) => {
+      const entry = entries[0];
+      if (!entry) return;
+
+      if (resizeTimeoutRef.current) clearTimeout(resizeTimeoutRef.current);
+
+      resizeTimeoutRef.current = setTimeout(() => {
+        const element = containerRef.current;
+        if (!element) return;
+
+        const newPixelData = calculatePixelData(element);
+
+        setPixelData((prevData) => {
+          if (!newPixelData) return null;
+
+          if (
+            !prevData ||
+            prevData.columns !== newPixelData.columns ||
+            Math.abs(prevData.pixelSize - newPixelData.pixelSize) > 0.01
+          ) {
+            return newPixelData;
+          }
+
+          return prevData;
+        });
+      }, DEBOUNCE_MS);
+    },
+    [calculatePixelData],
+  );
+
+  useLayoutEffect(() => {
+    const element = containerRef.current;
+    if (!element) return;
+
+    const observer = new ResizeObserver(handleResize);
+    observer.observe(element);
+
+    const initialData = calculatePixelData(element);
+    setPixelData(initialData);
+
+    return () => {
+      observer.disconnect();
+      if (resizeTimeoutRef.current) clearTimeout(resizeTimeoutRef.current);
     };
+  }, [handleResize, calculatePixelData]);
 
-    const observer = new ResizeObserver(updateSize);
-    observer.observe(el);
-    updateSize();
+  const meshContainerStyles = useMemo(() => {
+    if (!pixelData) return {};
 
-    return () => observer.disconnect();
-  }, [rows]);
+    const meshWidth = pixelData.columns * pixelData.pixelSize;
+    const meshHeight = rows * pixelData.pixelSize;
+
+    return {
+      width: `${meshWidth}rem`,
+      height: `${meshHeight}rem`,
+      bottom: 0,
+      left: 0,
+    };
+  }, [pixelData, rows]);
+
+  const meshProps = useMemo(() => {
+    if (!pixelData) return null;
+
+    return {
+      pixelSize: pixelData.pixelSize,
+      columns: pixelData.columns,
+      rows,
+    };
+  }, [pixelData, rows]);
 
   return (
     <div ref={containerRef} className={cn("relative", className)}>
-      {pixelData && (
+      {meshProps && (
         <div
-          className="absolute bottom-0 left-0"
-          style={{
-            width: `${pixelData.columns * pixelData.pixelSizeRem}rem`,
-            height: `${rows * pixelData.pixelSizeRem}rem`,
-          }}
+          className="pointer-events-none absolute"
+          style={meshContainerStyles}
         >
-          <PixelMesh
-            columns={pixelData.columns}
-            rows={rows}
-            pixelSize={pixelData.pixelSizeRem}
-          />
+          <PixelMesh {...meshProps} />
         </div>
       )}
       {children}
