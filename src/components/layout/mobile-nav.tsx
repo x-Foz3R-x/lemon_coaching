@@ -9,6 +9,7 @@ export default function MobileNav() {
     <nav className="relative flex h-9 items-center text-sm text-white sm:hidden">
       <Link
         href={env.NEXT_PUBLIC_INSTAGRAM_URL}
+        target="_blank"
         className="group relative h-full px-3 py-1.5"
       >
         <Instagram className="relative size-6 drop-shadow-[0_0_1px_#000,_0_0_2px_rgba(255,255,255,0.75)]" />
@@ -20,6 +21,7 @@ export default function MobileNav() {
       </Link>
       <Link
         href={env.NEXT_PUBLIC_YOUTUBE_URL}
+        target="_blank"
         className="group relative h-full px-3 py-1.5"
       >
         <Youtube className="size-6 drop-shadow-[0_0_1px_#000,_0_0_2px_rgba(255,255,255,0.75)]" />
@@ -31,6 +33,7 @@ export default function MobileNav() {
       </Link>
       <Link
         href={env.NEXT_PUBLIC_DISCORD_URL}
+        target="_blank"
         className="group relative h-full px-3 py-1.5"
       >
         <Discord className="size-6 drop-shadow-[0_0_1px_#000,_0_0_2px_rgba(255,255,255,0.75)]" />

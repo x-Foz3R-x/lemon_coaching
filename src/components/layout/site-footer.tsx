@@ -18,7 +18,7 @@ export default function SiteFooter() {
             Get updates, tips and join the Discord server to ask <br />
             questions & share your progress.
           </p>
-          <PixelButton href={env.NEXT_PUBLIC_DISCORD_URL}>
+          <PixelButton href={env.NEXT_PUBLIC_DISCORD_URL} target="_blank">
             Join Discord
           </PixelButton>
         </div>
