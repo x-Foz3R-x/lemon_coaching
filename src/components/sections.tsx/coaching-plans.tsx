@@ -31,7 +31,7 @@ export default function CoachingPlansSection() {
         />
       </div>
 
-      <div className="mx-auto text-center shadow-lg">
+      <div className="mx-auto text-center">
         <h5 className="font-pixel text-neon-green text-lg">
           How to Prepare for Coaching
         </h5>
