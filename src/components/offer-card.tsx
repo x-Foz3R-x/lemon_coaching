@@ -8,12 +8,7 @@ interface Props {
   icon: React.ReactNode;
 }
 
-export default function CoachingPlanCard({
-  title,
-  description,
-  price,
-  icon,
-}: Props) {
+export default function OfferCard({ title, description, price, icon }: Props) {
   return (
     <BackgroundGradient
       className="flex flex-col justify-center gap-8 rounded-[1.25rem] bg-gradient-to-br from-slate-800 to-slate-950 p-8 transition-all"

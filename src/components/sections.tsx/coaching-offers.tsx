@@ -1,12 +1,12 @@
 import { Sword, Shield } from "lucide-react";
 
-import CoachingPlanCard from "../coaching-plan-card";
-import SectionHeader from "../section-header";
 import PixelMesh from "../ui/pixel-mesh";
+import SectionHeader from "../section-header";
+import OfferCard from "../offer-card";
 
-export default function CoachingPlansSection() {
+export default function CoachingOffersSection() {
   return (
-    <section id="coaching-plans" className="relative w-full py-14">
+    <section id="coaching-offers" className="relative w-full py-14">
       {/* Pixel decoration */}
       <div className="absolute top-1/12 right-1/12">
         <PixelMesh columns={2} rows={2} />
@@ -15,15 +15,15 @@ export default function CoachingPlansSection() {
         <PixelMesh columns={4} rows={2} />
       </div>
 
-      <SectionHeader title="Coaching Plans" className="text-neon-green" />
+      <SectionHeader title="Coaching Offers" className="text-neon-green" />
       <div className="mb-8 flex flex-wrap items-center justify-center gap-8 text-white sm:grid-cols-2">
-        <CoachingPlanCard
+        <OfferCard
           title="Top Lane"
           description="Learn wave control, trading, macro, matchups & impact from the top"
           price="25$"
           icon={<Shield className="text-pixel-blue size-full" />}
         />
-        <CoachingPlanCard
+        <OfferCard
           title="Mid Lane"
           description="Dominate mid with roam timing, tempo, vision, map impact & duels"
           price="25$"

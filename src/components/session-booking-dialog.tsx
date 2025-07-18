@@ -19,7 +19,7 @@ export default function SessionBookingDialog() {
         </PixelButton>
       </DialogTrigger>
 
-      <DialogContent className="border-pixel-purple/50 max-w-sm rounded-lg border bg-gradient-to-br from-slate-800 to-slate-950 text-white shadow-xl">
+      <DialogContent className="border-pixel-purple/50 container h-[calc(100%-10rem)] rounded-lg border bg-gradient-to-br from-slate-800 to-slate-950 text-white shadow-xl">
         <DialogTitle className="font-pixel text-center text-2xl">
           Ready to Level Up?
         </DialogTitle>
@@ -27,11 +27,9 @@ export default function SessionBookingDialog() {
           Secure your spot and let&rsquo;s start climbing.
         </DialogDescription>
 
-        <div className="border-pixel-purple/75 relative flex-1 overflow-hidden rounded-xl border bg-white shadow-inner">
+        <div className="border-pixel-purple/75 relative w-full flex-1 overflow-scroll rounded-xl border bg-white shadow-inner">
           <iframe
             src={env.NEXT_PUBLIC_BOOKING_URL}
-            width="100%"
-            height="100%"
             loading="lazy"
             title="Booking Calendar"
             className="absolute inset-0 h-full w-full border-none"

@@ -2,7 +2,7 @@ import HeroSection from "~/components/sections.tsx/hero";
 import SkillsSection from "~/components/sections.tsx/skills";
 import ReviewsSection from "~/components/sections.tsx/reviews";
 import AboutSection from "~/components/sections.tsx/about";
-import CoachingPlansSection from "~/components/sections.tsx/coaching-plans";
+import CoachingOffersSection from "~/components/sections.tsx/coaching-offers";
 
 export default function HomePage() {
   return (
@@ -11,7 +11,7 @@ export default function HomePage() {
         <HeroSection />
         <SkillsSection />
         <AboutSection />
-        <CoachingPlansSection />
+        <CoachingOffersSection />
         <ReviewsSection />
       </div>
     </main>

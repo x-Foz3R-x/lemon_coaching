@@ -11,7 +11,7 @@ import SiteFooter from "~/components/layout/site-footer";
 export const metadata: Metadata = {
   title: "Lemon Coaching",
   description: "League of Legends Coaching",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [{ rel: "icon", url: "/favicon.svg" }],
 };
 
 const geist = Geist({
