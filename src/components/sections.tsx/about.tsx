@@ -1,5 +1,6 @@
 import PixelMesh from "../ui/pixel-mesh";
 import { Avatar } from "../icons";
+import SectionHeader from "../section-header";
 
 export default function AboutSection() {
   return (
@@ -12,10 +13,7 @@ export default function AboutSection() {
         <PixelMesh columns={3} rows={1} />
       </div>
 
-      <h3 className="font-pixel text-pixel-purple mb-8 text-center text-3xl saturate-150">
-        About Me
-      </h3>
-
+      <SectionHeader title="About Me" className="text-pixel-purple" />
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-9">
         {/* Avatar */}
         <div className="border-pixel-purple/25 mx-auto size-36 flex-shrink-0 overflow-hidden rounded-xl border bg-slate-500 p-2 shadow-lg sm:size-48">

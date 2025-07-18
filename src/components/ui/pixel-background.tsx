@@ -114,8 +114,6 @@ export default function PixelBackground({
     return {
       width: `${meshWidth}rem`,
       height: `${meshHeight}rem`,
-      bottom: 0,
-      left: 0,
     };
   }, [pixelData, rows]);
 
@@ -133,10 +131,10 @@ export default function PixelBackground({
     <div ref={containerRef} className={cn("relative", className)}>
       {meshProps && (
         <div
-          className="pointer-events-none absolute"
+          className="pointer-events-none absolute bottom-0 left-0"
           style={meshContainerStyles}
         >
-          <PixelMesh glass={glass} {...meshProps} />
+          <PixelMesh glass={glass} {...meshProps} className="bottom-0" />
         </div>
       )}
       {children}

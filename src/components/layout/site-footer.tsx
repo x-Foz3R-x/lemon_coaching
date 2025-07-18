@@ -32,7 +32,7 @@ export default function SiteFooter() {
         </p>
       </PixelBackground>
 
-      <div className="w-full bg-gray-700/35 p-2.5">
+      <div className="w-full bg-gray-700/20 p-2.5">
         <div className="container mx-auto flex justify-between gap-4">
           <p className="font-mono text-xs text-gray-500">
             &copy; {new Date().getFullYear()} LemoN Coaching. All rights

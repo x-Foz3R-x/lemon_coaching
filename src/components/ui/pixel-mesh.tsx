@@ -43,7 +43,7 @@ export default function PixelMesh({
   return (
     <div
       className={cn(
-        "absolute top-0 left-0 -z-10 bg-gray-700/35",
+        "absolute top-0 left-0 -z-10 bg-gray-700/20",
         glass && "backdrop-blur-md backdrop-saturate-150",
         className,
       )}
