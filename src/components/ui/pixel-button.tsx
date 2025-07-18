@@ -1,8 +1,8 @@
-import * as React from "react";
+import { useCallback, useMemo } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
+import Link from "next/link";
 
 import { cn } from "~/lib/utils";
-import Link from "next/link";
 
 const buttonVariants = cva(
   "focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-neon-yellow group: relative inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 font-bold whitespace-nowrap text-gray-900 uppercase shadow-[0px_0px_2px_#000,_0_0_4px_#f9ff00] saturate-150 transition outline-none hover:scale-x-[107%] hover:scale-y-[98%] hover:shadow-[0px_0px_2px_#000,_0_0_6px_#f9ff00] focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
@@ -33,7 +33,7 @@ export default function PixelButton({
   const pixelSizes = { sm: 0.375, md: 0.5 };
   const pixelSize = pixelSizes[size ?? "md"];
 
-  const createPixelSpanStyle = React.useCallback(
+  const createPixelSpanStyle = useCallback(
     (
       widthMultiplier: number,
       heightMultiplier: number,
@@ -54,7 +54,7 @@ export default function PixelButton({
     [pixelSize],
   );
 
-  const pixelSpans = React.useMemo(
+  const pixelSpans = useMemo(
     () => (
       <>
         <span
@@ -87,6 +87,22 @@ export default function PixelButton({
     [createPixelSpanStyle],
   );
 
+  const leafSpans = useMemo(
+    () => (
+      <>
+        <span
+          className="bg-neon-green absolute right-1/2 origin-bottom-right -rotate-12"
+          style={createPixelSpanStyle(2.5, 0.75, -1.75, undefined, -1)}
+        />
+        <span
+          className="bg-neon-green absolute right-1/2 origin-bottom-right -rotate-12"
+          style={createPixelSpanStyle(1.5, 0.5, -2.5, undefined, -1.5)}
+        />
+      </>
+    ),
+    [createPixelSpanStyle],
+  );
+
   if (href) {
     return (
       <Link
@@ -96,6 +112,7 @@ export default function PixelButton({
       >
         {children}
         {pixelSpans}
+        {leafSpans}
       </Link>
     );
   } else {
@@ -108,6 +125,7 @@ export default function PixelButton({
       >
         {children}
         {pixelSpans}
+        {leafSpans}
       </button>
     );
   }

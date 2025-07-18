@@ -16,7 +16,10 @@ export const env = createEnv({
    * `NEXT_PUBLIC_`.
    */
   client: {
+    NEXT_PUBLIC_APP_URL: z.string(),
+    // Booking
     NEXT_PUBLIC_BOOKING_URL: z.string(),
+    //Social Media
     NEXT_PUBLIC_AUTHOR_URL: z.string(),
     NEXT_PUBLIC_INSTAGRAM_URL: z.string(),
     NEXT_PUBLIC_YOUTUBE_URL: z.string(),
@@ -29,7 +32,10 @@ export const env = createEnv({
    */
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+    // Booking
     NEXT_PUBLIC_BOOKING_URL: process.env.NEXT_PUBLIC_BOOKING_URL,
+    // Social Media
     NEXT_PUBLIC_AUTHOR_URL: process.env.NEXT_PUBLIC_AUTHOR_URL,
     NEXT_PUBLIC_INSTAGRAM_URL: process.env.NEXT_PUBLIC_INSTAGRAM_URL,
     NEXT_PUBLIC_YOUTUBE_URL: process.env.NEXT_PUBLIC_YOUTUBE_URL,

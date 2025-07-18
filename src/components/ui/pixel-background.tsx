@@ -12,6 +12,7 @@ import { cn } from "~/lib/utils";
 
 interface Props {
   rows?: number;
+  glass?: boolean;
   className?: string;
   children?: React.ReactNode;
 }
@@ -25,6 +26,7 @@ const DEBOUNCE_MS = 100;
 
 export default function PixelBackground({
   rows = 6,
+  glass,
   className,
   children,
 }: Props) {
@@ -134,7 +136,7 @@ export default function PixelBackground({
           className="pointer-events-none absolute"
           style={meshContainerStyles}
         >
-          <PixelMesh {...meshProps} />
+          <PixelMesh glass={glass} {...meshProps} />
         </div>
       )}
       {children}
