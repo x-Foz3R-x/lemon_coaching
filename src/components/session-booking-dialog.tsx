@@ -1,6 +1,5 @@
 "use client";
 
-import { env } from "~/env";
 import {
   Dialog,
   DialogContent,
@@ -19,22 +18,24 @@ export default function SessionBookingDialog() {
         </PixelButton>
       </DialogTrigger>
 
-      <DialogContent className="border-pixel-purple/50 container h-[calc(100%-10rem)] rounded-lg border bg-gradient-to-br from-slate-800 to-slate-950 text-white shadow-xl">
+      <DialogContent className="border-pixel-purple/50 container h-fit w-fit rounded-lg border bg-gradient-to-br from-slate-800 to-slate-950 text-white shadow-xl">
         <DialogTitle className="font-pixel text-center text-2xl">
           Ready to Level Up?
         </DialogTitle>
         <DialogDescription className="text-center text-base text-slate-400">
-          Secure your spot and let&rsquo;s start climbing.
+          Secure your spot and let&rsquo;s start climbing. <br /> Payment at the
+          end of the session via PayPal or Blik.
         </DialogDescription>
 
-        <div className="border-pixel-purple/75 relative w-full flex-1 overflow-scroll rounded-xl border bg-white shadow-inner">
-          <iframe
-            src={env.NEXT_PUBLIC_BOOKING_URL}
-            loading="lazy"
-            title="Booking Calendar"
-            className="absolute inset-0 h-full w-full border-none"
-          />
-        </div>
+        <div
+          className="calendly-inline-widget border-pixel-purple/75 h-[620px] w-full min-w-xs overflow-hidden rounded-lg border bg-slate-800 px-4 shadow-inner sm:min-w-sm md:min-w-lg"
+          data-url="https://calendly.com/lemon-coaching/1h-mid-coaching-session?hide_event_type_details=1&hide_gdpr_banner=1&background_color=1d293d&text_color=ffffff&primary_color=f9ff00"
+        />
+        <script
+          type="text/javascript"
+          src="https://assets.calendly.com/assets/external/widget.js"
+          async
+        />
       </DialogContent>
     </Dialog>
   );
