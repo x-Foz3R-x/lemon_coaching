@@ -1,19 +1,13 @@
 "use client";
 
-import React, {
-  useCallback,
-  useLayoutEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
-import PixelMesh from "./pixel-mesh";
+import { useCallback, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { cn } from "~/lib/utils";
 
 interface Props {
   rows?: number;
   glass?: boolean;
   className?: string;
+  meshClassName?: string;
   children?: React.ReactNode;
 }
 
@@ -28,6 +22,7 @@ export default function PixelBackground({
   rows = 6,
   glass,
   className,
+  meshClassName,
   children,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -105,6 +100,20 @@ export default function PixelBackground({
     };
   }, [handleResize, calculatePixelData]);
 
+  const pixelMask = useMemo(() => {
+    if (!pixelData) return "";
+
+    return `
+      repeating-conic-gradient(
+        from 0deg,
+        transparent 0deg 90deg,
+        black 90deg 180deg,
+        transparent 180deg 270deg,
+        black 270deg 360deg
+      )
+    `;
+  }, [pixelData]);
+
   const meshContainerStyles = useMemo(() => {
     if (!pixelData) return {};
 
@@ -114,28 +123,29 @@ export default function PixelBackground({
     return {
       width: `${meshWidth}rem`,
       height: `${meshHeight}rem`,
+      WebkitMaskImage: pixelMask,
+      WebkitMaskSize: `${pixelData.pixelSize * 2}rem ${pixelData.pixelSize * 2}rem`,
+      WebkitMaskRepeat: "repeat",
+      maskImage: pixelMask,
+      maskSize: `${pixelData.pixelSize * 2}rem ${pixelData.pixelSize * 2}rem`,
+      maskRepeat: "repeat",
+      ...(glass && {
+        backdropFilter: "blur(10px)",
+        backgroundColor: "rgba(255, 255, 255, 0.1)",
+      }),
     };
-  }, [pixelData, rows]);
-
-  const meshProps = useMemo(() => {
-    if (!pixelData) return null;
-
-    return {
-      pixelSize: pixelData.pixelSize,
-      columns: pixelData.columns,
-      rows,
-    };
-  }, [pixelData, rows]);
+  }, [pixelData, rows, pixelMask, glass]);
 
   return (
     <div ref={containerRef} className={cn("relative", className)}>
-      {meshProps && (
+      {pixelData && (
         <div
-          className="pointer-events-none absolute bottom-0 left-0"
+          className={cn(
+            "pointer-events-none absolute bottom-0 left-0 -z-10",
+            meshClassName,
+          )}
           style={meshContainerStyles}
-        >
-          <PixelMesh glass={glass} {...meshProps} className="bottom-0" />
-        </div>
+        />
       )}
       {children}
     </div>

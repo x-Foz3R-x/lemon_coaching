@@ -8,7 +8,10 @@ import PixelBackground from "../ui/pixel-background";
 export default function SiteFooter() {
   return (
     <footer className="relative w-full">
-      <PixelBackground className="w-full py-14 text-center">
+      <PixelBackground
+        className="w-full py-14 text-center"
+        meshClassName="bg-gradient-to-b from-transparent to-gray-700/20"
+      >
         <div className="flex flex-col items-center gap-4 py-6">
           <SectionHeader
             title="Join the Community"

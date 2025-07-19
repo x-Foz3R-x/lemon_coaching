@@ -16,6 +16,12 @@ export default function CoachingOffersSection() {
       </div>
 
       <SectionHeader title="Coaching Offers" className="text-neon-green" />
+      <h5 className="mb-8">
+        <span className="text-neon-yellow font-bold">Payment</span> at the end
+        of the session via{" "}
+        <span className="text-neon-yellow font-bold">PayPal</span> or{" "}
+        <span className="text-neon-yellow font-bold">Blik</span>.
+      </h5>
       <div className="mb-8 flex flex-wrap items-center justify-center gap-8 text-white sm:grid-cols-2">
         <OfferCard
           title="Top Lane"
