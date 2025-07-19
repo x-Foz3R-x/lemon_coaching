@@ -4,7 +4,7 @@ import SectionHeader from "../section-header";
 
 export default function AboutSection() {
   return (
-    <section className="relative w-full py-14">
+    <section className="relative w-full py-20">
       {/* Pixel decoration */}
       <div className="absolute top-1/6 right-1/3">
         <PixelMesh columns={3} rows={3} />

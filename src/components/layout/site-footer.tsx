@@ -9,10 +9,10 @@ export default function SiteFooter() {
   return (
     <footer className="relative w-full">
       <PixelBackground
-        className="w-full py-14 text-center"
+        className="w-full py-20 text-center"
         meshClassName="bg-gradient-to-b from-transparent to-gray-700/20"
       >
-        <div className="flex flex-col items-center gap-4 py-6">
+        <div className="mb-8 flex flex-col items-center gap-4">
           <SectionHeader
             title="Join the Community"
             className="text-neon-yellow m-0 text-2xl leading-4"
@@ -30,7 +30,7 @@ export default function SiteFooter() {
           </PixelButton>
         </div>
 
-        <p className="p-2 text-sm text-gray-400 italic">
+        <p className="text-sm text-gray-400 italic">
           „It&rsquo;s not about playing more, it&rsquo;s about playing better.”
         </p>
       </PixelBackground>

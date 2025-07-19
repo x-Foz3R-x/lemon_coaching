@@ -4,7 +4,7 @@ import PixelMesh from "../ui/pixel-mesh";
 
 export default function ReviewsSection() {
   return (
-    <section className="relative w-full py-14">
+    <section className="relative w-full py-20">
       {/* Pixel decoration */}
       <div className="absolute top-0 right-1/12">
         <PixelMesh columns={3} rows={3} />

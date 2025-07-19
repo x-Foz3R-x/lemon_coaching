@@ -5,7 +5,7 @@ import PixelButton from "../ui/pixel-button";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full py-14">
+    <section className="relative w-full py-20">
       {/* Pixel decoration */}
       <div className="absolute top-1/4 left-1/12">
         <PixelMesh columns={4} rows={4} />

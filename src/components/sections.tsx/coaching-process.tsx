@@ -5,7 +5,7 @@ import ProcessCard from "../process-card";
 
 export default function CoachingProcessSection() {
   return (
-    <section className="relative w-full py-14">
+    <section className="relative w-full py-20">
       {/* Pixel decoration */}
       <div className="absolute top-0 left-1/6">
         <PixelMesh columns={3} rows={2} />

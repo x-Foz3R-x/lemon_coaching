@@ -6,7 +6,7 @@ import OfferCard from "../offer-card";
 
 export default function CoachingOffersSection() {
   return (
-    <section id="coaching-offers" className="relative w-full py-14">
+    <section id="coaching-offers" className="relative w-full py-20">
       {/* Pixel decoration */}
       <div className="absolute top-1/12 right-1/12">
         <PixelMesh columns={2} rows={2} />

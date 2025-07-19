@@ -14,7 +14,7 @@ import SkillCard from "../skill-card";
 
 export default function SkillsSection() {
   return (
-    <section className="relative w-full py-14">
+    <section className="relative w-full py-20">
       {/* Pixel decoration */}
       <div className="absolute top-1/12 right-1/4">
         <PixelMesh columns={2} rows={2} />
